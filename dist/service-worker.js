@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.5bb5e42c7c0d0506e2a6fef347546259.js"
+  "/precache-manifest.dd6233d5d119bd91634c96ebbae25d11.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "rapio"});
