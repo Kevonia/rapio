@@ -1,0 +1,19 @@
+.home {
+    // Write your styles here.
+
+    .text {
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    
+    .bg-content {
+        background: linear-gradient(rgba(62, 7, 11, 0.6), rgba(62, 7, 11, 0.6)); 
+    }
+}
