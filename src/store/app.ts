@@ -1,15 +1,24 @@
+import { homeData } from '@/entities/homedata/homedata';
+import { HomeService } from '@/services/home-service';
 import { Module, VuexModule, Mutation, Action } from 'vuex-module-decorators';
 
+const MODULE_NAME = 'appstore';
+
 @Module({ namespaced: true })
-class Store {
-  private fooBarVal: string = '';
+class AppStore {
+
+  public static readonly getModule = () => ({
+    [MODULE_NAME]: AppStore as any as VuexModule,
+  })
+
+  private _homeData!: homeData;
 
   // ------------------------------------------------------------------------
   // Getters retrieve properties from the Store.
   // ------------------------------------------------------------------------
 
-  public get fooBar() {
-    return this.fooBarVal;
+  public get homeData() {
+    return this._homeData;
   }
 
   // ------------------------------------------------------------------------
@@ -21,33 +30,23 @@ class Store {
   // specified as the decorator's "commit" attribute.
   // ------------------------------------------------------------------------
 
-  @Action({ commit: 'setFooBar' })
-  public initializeFooBar() {
-    return 'Hello World';
-  }
-
-  @Action({ commit: 'setFooBar' })
-  public resetFooBar() {
-    return null;
-  }
-
-  @Action({ commit: 'setFooBar' })
-  public setCustomFooBar(value: string) {
-    return value;
+  @Action({ commit: 'setHomePage' })
+  public async initializeHomePage() {
+    const result =  await HomeService.getAll();
+    return  result;
   }
 
   // ------------------------------------------------------------------------
   // Mutations update the properties in the Store.
   // They are internal
   // ------------------------------------------------------------------------
-
   @Mutation
-  private setFooBar(value: string) {
-    this.fooBarVal = value;
+  private setHomePage(value: homeData) {
+    this._homeData = value;
   }
 }
 
 export {
-  Store as default,
-  Store,
+  AppStore as default,
+  AppStore,
 };

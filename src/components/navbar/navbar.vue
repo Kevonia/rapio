@@ -5,8 +5,8 @@
     <template slot="brand">
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
         <img
-          src="/logo.jpeg"
-          alt="Lightweight UI components for Vue.js based on Bulma"
+          :src="logo"
+          alt="Rapio Eat Delivery System"
         />
       </b-navbar-item>
     </template>
@@ -17,7 +17,7 @@
         <b-icon icon="home" size="is-small" type="is-primary"> </b-icon>
         <span class="pl-2"> Home</span>
       </b-navbar-item>
-      <b-navbar-item href="#" class="[ flex ]">
+      <b-navbar-item href="#/login" class="[ flex ]">
         <b-icon icon="sign-in-alt" size="is-small" type="is-primary"> </b-icon>
         <span class="pl-2"> Login </span>
       </b-navbar-item>

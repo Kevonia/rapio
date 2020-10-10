@@ -1,5 +1,7 @@
 import { Component, Vue } from 'vue-property-decorator';
+import env from '@/config/env';
 
+const { brandingUri } = env;
 @Component({
   components: {
   },
@@ -22,6 +24,9 @@ class Navbar extends Vue {
   // [Public] Accessors
   // --------------------------------------------------------------------------
 
+  get logo() {
+    return brandingUri;
+  }
   // --------------------------------------------------------------------------
   // [Public] Methods
   // --------------------------------------------------------------------------

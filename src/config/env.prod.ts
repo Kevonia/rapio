@@ -1,4 +1,4 @@
 export default {
-  brandingUri: 'https://blog.hubspot.com/hubfs/image8-2.jpg',
-
+  brandingUri: '/logo.jpeg',
+  apiUrl: 'http://rapioeats.test/api/v1',
 };

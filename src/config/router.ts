@@ -17,5 +17,15 @@ export default new Router({
         import(
           '@/pages/home'),
     },
+    {
+      path: '/auth/login',
+      name: 'login',
+      meta: {
+        layout: 'default',
+      },
+      component: () =>
+        import(
+          '@/pages/login'),
+    },
   ],
 });

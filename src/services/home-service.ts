@@ -1,37 +1,38 @@
-import axios, { AxiosInstance } from 'axios';
-import env from '@/config/env';
+import { homeData } from '@/entities/homedata/homedata';
 
-const { apiUrl } = env;
-class BaseService {
-  // --------------------------------------------------------------------------
-  // Fields
-  // --------------------------------------------------------------------------
-  protected api: AxiosInstance;
+import { AxiosResponse } from 'axios';
+import { BaseService } from './base';
 
-  // --------------------------------------------------------------------------
-  // Constructor
+class HomeService extends BaseService {
+    // --------------------------------------------------------------------------
+  // [Private] Fields
   // --------------------------------------------------------------------------
 
+  // --------------------------------------------------------------------------
+  // [Public] Constructor
+  // --------------------------------------------------------------------------
   constructor() {
-    this.api = axios.create({ baseURL: apiUrl });
-    // Set the AUTH token for any request
-    this.api.interceptors.request.use((config) => {
-      const token = sessionStorage.getItem('token');
-      config.headers.Authorization = token ? `Bearer ${token}` : '';
-      return config;
-    });
+    super();
   }
 
   // --------------------------------------------------------------------------
-  // Accessors
+  // [Public] Accessors
   // --------------------------------------------------------------------------
 
   // --------------------------------------------------------------------------
-  // Event Handlers
+  // [Public] Methods
+  // --------------------------------------------------------------------------
+
+  public async getAll(): Promise<any> {
+    return await (await this.api.get('/')).data;
+  }
+
+  // --------------------------------------------------------------------------
+  // [Private] Event Handlers
   // --------------------------------------------------------------------------
 
   // --------------------------------------------------------------------------
-  // Methods
+  // [Private] Methods
   // --------------------------------------------------------------------------
 
 }
@@ -40,6 +41,9 @@ class BaseService {
 // Module Exports
 // ----------------------------------------------------------------------------
 
+const service  = new HomeService();
+
 export {
-  BaseService,
+  service as default,
+  service as HomeService,
 };
