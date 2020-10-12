@@ -31,7 +31,7 @@
           </span>
         </div>
         <span  class="text-white pt-8 px-4">
-          Copyright © {{ new Date().getFullYear() }} Rapio Eat Delivery System
+          Copyright © {{ new Date().getFullYear() }} Rapio Eats Delivery System
         </span>
       </div>
     </footer>

@@ -1,13 +1,13 @@
 import { Component, Vue } from 'vue-property-decorator';
+import AuthformTemplate from '@/components/authform-template';
 import env from '@/config/env';
-
-const { logo } = env.brand;
 @Component({
   components: {
+    AuthformTemplate
   },
-  name: 'navbar',
+  name: 'forget',
 })
-class Navbar extends Vue {
+class Forget extends Vue {
   // --------------------------------------------------------------------------
   // [Private] Fields
   // --------------------------------------------------------------------------
@@ -24,9 +24,6 @@ class Navbar extends Vue {
   // [Public] Accessors
   // --------------------------------------------------------------------------
 
-  get logo() {
-    return logo;
-  }
   // --------------------------------------------------------------------------
   // [Public] Methods
   // --------------------------------------------------------------------------
@@ -50,6 +47,6 @@ class Navbar extends Vue {
 }
 
 export {
-  Navbar as default,
-  Navbar,
+  Forget as default,
+  Forget,
 };

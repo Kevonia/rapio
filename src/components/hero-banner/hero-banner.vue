@@ -3,7 +3,7 @@
 <template>
   <div
     class="hero-banner [ h-3/4-screen ][ grid ] bg-fixed"
-    style="background-image: url(../background-home.jpg)"
+    style="background-image: url(../assets/img/background-home.jpg)"
   >
     <div class="[ h-full ][ grid ] [ hero-content ]">
       <div class="[ grid self-center text-center gap-4 ]">

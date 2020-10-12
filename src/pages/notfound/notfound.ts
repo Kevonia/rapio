@@ -1,13 +1,10 @@
 import { Component, Vue } from 'vue-property-decorator';
-import env from '@/config/env';
 
-const { logo } = env.brand;
 @Component({
-  components: {
-  },
-  name: 'navbar',
+  components: {},
+  name: 'notfound',
 })
-class Navbar extends Vue {
+class Notfound extends Vue {
   // --------------------------------------------------------------------------
   // [Private] Fields
   // --------------------------------------------------------------------------
@@ -24,9 +21,6 @@ class Navbar extends Vue {
   // [Public] Accessors
   // --------------------------------------------------------------------------
 
-  get logo() {
-    return logo;
-  }
   // --------------------------------------------------------------------------
   // [Public] Methods
   // --------------------------------------------------------------------------
@@ -50,6 +44,6 @@ class Navbar extends Vue {
 }
 
 export {
-  Navbar as default,
-  Navbar,
+  Notfound as default,
+  Notfound,
 };

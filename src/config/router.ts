@@ -21,11 +21,31 @@ export default new Router({
       path: '/auth/login',
       name: 'login',
       meta: {
-        layout: 'default',
+        layout: 'minimal',
       },
       component: () =>
         import(
           '@/pages/login'),
+    },
+    {
+      path: '/auth/register',
+      name: 'signup',
+      meta: {
+        layout: 'minimal',
+      },
+      component: () =>
+        import(
+          '@/pages/signup'),
+    },
+    {
+      path: '/auth/forget',
+      name: 'forget',
+      meta: {
+      layout: 'minimal',
+      },
+      component: () =>
+        import(
+          '@/pages/forget'),
     },
   ],
 });

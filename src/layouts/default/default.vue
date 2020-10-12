@@ -2,22 +2,22 @@
 <script lang="ts" src="./default.ts">
 </script>
 <template>
-  <div class="[ default ][ ]">
+  <div class="[ default grid ][ ]">
     <!-- Header -->
 
-    <div class="[ ]">
+    <div class="[  ]">
       <navbar> </navbar>
     </div>
 
     <!-- Body -->
-    <div class="[ ]">
+    <div class="[ grid ]">
       <transition name="fade">
         <router-view />
       </transition>
     </div>
 
     <!-- Footer -->
-    <div class="[ ]">
+    <div class="[ grid ]">
    <site-footer> </site-footer>
     </div>
   </div>

@@ -38,28 +38,28 @@
             class="grid lg:grid-cols-4 sm:grid-cols-1 md:grid-cols-2 gap-4 justify-items-center"
           >
             <div class="grid gap">
-              <img src="/cutlery.png" class="mx-auto sm:w-full md:w-1/3" />
+              <img :src="Icon1" class="mx-auto sm:w-full md:w-1/3" />
               <h3 class="text-center font-semibold text-lg">
                 Pick a restaurant
               </h3>
             </div>
 
             <div class="grid gap">
-              <img src="/cargo-truck.png" class="mx-auto sm:w-full md:w-1/3"" />
+              <img :src="Icon2"  class="mx-auto sm:w-full md:w-1/3"" />
               <h3 class="text-center font-semibold text-lg">
                 Order a takeaway
               </h3>
             </div>
 
             <div class="grid gap-4">
-              <img src="/beer.png" class="mx-auto sm:w-full md:w-1/3" />
+              <img :src="Icon3" class="mx-auto sm:w-full md:w-1/3" />
               <h3 class="text-center font-semibold text-lg">
                 Your food is delivered
               </h3>
             </div>
 
             <div class="grid gap">
-              <img src="/like.png" class="mx-auto sm:w-full md:w-1/3" />
+              <img :src="Icon4" class="mx-auto sm:w-full md:w-1/3" />
               <h3 class="text-center font-semibold text-lg">Happy, enjoy</h3>
             </div>
           </div>
@@ -69,7 +69,7 @@
 
     <section
       class="hero is-bold bg-fixed"
-      style="background-image: url(../2664646.jpg)"
+      style="background-image: url(../assets/img/2664646.jpg)"
     >
       <div class="hero-body bg-content">
         <div class="pb-8">

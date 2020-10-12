@@ -1,13 +1,16 @@
 import { Component, Vue } from 'vue-property-decorator';
+import Mininalcard from '@/components/mininalcard';
 import env from '@/config/env';
 
 const { logo } = env.brand;
+
 @Component({
   components: {
+    Mininalcard,
   },
-  name: 'navbar',
+  name: 'authform-template',
 })
-class Navbar extends Vue {
+class AuthformTemplate extends Vue {
   // --------------------------------------------------------------------------
   // [Private] Fields
   // --------------------------------------------------------------------------
@@ -24,9 +27,14 @@ class Navbar extends Vue {
   // [Public] Accessors
   // --------------------------------------------------------------------------
 
-  get logo() {
+  get logo(){
     return logo;
   }
+
+  get name() {
+    return env.name;
+  }
+
   // --------------------------------------------------------------------------
   // [Public] Methods
   // --------------------------------------------------------------------------
@@ -50,6 +58,6 @@ class Navbar extends Vue {
 }
 
 export {
-  Navbar as default,
-  Navbar,
+  AuthformTemplate as default,
+  AuthformTemplate,
 };

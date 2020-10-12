@@ -8,6 +8,8 @@ import '@/theme/_all.scss';
 import Vue2Filters from 'vue2-filters';
 import '@/modules/core/fontawesome';
 
+
+
 Vue.config.productionTip = false;
 Vue.use(Vue2Filters);
 

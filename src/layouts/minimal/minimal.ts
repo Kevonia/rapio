@@ -1,13 +1,13 @@
 import { Component, Vue } from 'vue-property-decorator';
-import env from '@/config/env';
+import { Dictionary } from 'vue-router/types/router';
 
-const { logo } = env.brand;
 @Component({
   components: {
+
   },
-  name: 'navbar',
+  name: 'minimal',
 })
-class Navbar extends Vue {
+class Minimal extends Vue {
   // --------------------------------------------------------------------------
   // [Private] Fields
   // --------------------------------------------------------------------------
@@ -24,12 +24,13 @@ class Navbar extends Vue {
   // [Public] Accessors
   // --------------------------------------------------------------------------
 
-  get logo() {
-    return logo;
-  }
   // --------------------------------------------------------------------------
   // [Public] Methods
   // --------------------------------------------------------------------------
+
+  public async navigate(path: string, params?: Dictionary<string>) {
+    await this.$router.push({ path, params });
+  }
 
   // --------------------------------------------------------------------------
   // [Private] Event Handlers
@@ -50,6 +51,6 @@ class Navbar extends Vue {
 }
 
 export {
-  Navbar as default,
-  Navbar,
+  Minimal as default,
+  Minimal,
 };

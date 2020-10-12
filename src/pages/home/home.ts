@@ -2,6 +2,10 @@ import { Component, Vue } from 'vue-property-decorator';
 import HeroBanner from '@/components/hero-banner';
 import { app } from '@/store';
 
+import env from '@/config/env';
+
+const { beer,truck,cutlery,like } = env.brand;
+
 @Component({
   components: {
     HeroBanner,
@@ -68,13 +72,32 @@ class Home extends Vue {
 
   }
 
+
+  public get Icon1() {
+    return beer
+  }
+  public get Icon2() {
+    return truck
+  }
+
+  public get Icon3() {
+    return cutlery
+  }
+
+  public get Icon4() {
+    return like
+  }
+
+
+
+
   public get collections() {
-    return app.homeData.collections;
+    return app.homeData?.collections;
   }
 
 
   public get testimonials() {
-    return app.homeData.testimonials;
+    return app.homeData?.testimonials;
   }
 
 

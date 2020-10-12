@@ -28,7 +28,10 @@ $colors: ("white": ($white, $black),
 $link: $primary;
 $link-invert: $primary-invert;
 $link-focus-border: $primary;
+//footer
+$footer-padding:3rem;	
 $footer-background-color: $black;
+
 $menu-item-color:$light;
 // Import Bulma and Buefy styles
 @import "~bulma";
@@ -37,3 +40,6 @@ $menu-item-color:$light;
 @import "tailwind";
 
 //TODO: import additional global CSS here.
+
+$animationDuration: 0.5s; // specify animation duration. Default value: 1s 
+@import "~vue2-animate/src/sass/vue2-animate.scss";
