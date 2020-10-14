@@ -18,10 +18,10 @@ class Signup extends Vue {
   // --------------------------------------------------------------------------
   // [Private] Fields
   // --------------------------------------------------------------------------
-  private fullName = "";
-  private email = "";
-  private password = "";
-  private confrimPassword = "";
+  private fullName = '';
+  private email = '';
+  private password = '';
+  private confrimPassword = '';
 
   // --------------------------------------------------------------------------
   // [Public] Constructor

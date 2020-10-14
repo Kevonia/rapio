@@ -1,24 +1,20 @@
 import { Component, Vue } from 'vue-property-decorator';
-import Mininalcard from '@/components/mininalcard';
-import env from '@/config/env';
-
-const { logo } = env.brand;
 
 @Component({
-  components: {
-    Mininalcard,
-  },
-  name: 'authform-template',
+  components: {},
+  name: 'restaurant',
 })
-class AuthformTemplate extends Vue {
+class Restaurant extends Vue {
   // --------------------------------------------------------------------------
   // [Private] Fields
   // --------------------------------------------------------------------------
+   private ratings =4.5;
 
+   private hover =false;
   // --------------------------------------------------------------------------
   // [Public] Constructor
   // --------------------------------------------------------------------------
-
+  
   constructor() {
     super();
   }
@@ -26,14 +22,6 @@ class AuthformTemplate extends Vue {
   // --------------------------------------------------------------------------
   // [Public] Accessors
   // --------------------------------------------------------------------------
-
-  get logo() {
-    return logo;
-  }
-
-  get name() {
-    return env.name;
-  }
 
   // --------------------------------------------------------------------------
   // [Public] Methods
@@ -58,6 +46,6 @@ class AuthformTemplate extends Vue {
 }
 
 export {
-  AuthformTemplate as default,
-  AuthformTemplate,
+  Restaurant as default,
+  Restaurant,
 };

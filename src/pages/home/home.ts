@@ -4,7 +4,7 @@ import { app } from '@/store';
 
 import env from '@/config/env';
 
-const { beer,truck,cutlery,like } = env.brand;
+const { beer, truck, cutlery, like } = env.brand;
 
 @Component({
   components: {
@@ -74,18 +74,18 @@ class Home extends Vue {
 
 
   public get Icon1() {
-    return beer
+    return beer;
   }
   public get Icon2() {
-    return truck
+    return truck;
   }
 
   public get Icon3() {
-    return cutlery
+    return cutlery;
   }
 
   public get Icon4() {
-    return like
+    return like;
   }
 
 

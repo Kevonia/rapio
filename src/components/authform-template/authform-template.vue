@@ -25,7 +25,7 @@
         </div>
       </div>
 
-      <div class="[ grid col-span-1 border-t-6 border-red ]">
+      <div class="[ grid col-span-1 md:border-t-6 sm:border-l-6  md:border-l-0 border-red  ]">
         <div class="[ grid ] [ ]">
           <mininalcard>
             <slot> </slot>

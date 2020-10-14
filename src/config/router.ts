@@ -18,6 +18,16 @@ export default new Router({
           '@/pages/home'),
     },
     {
+      path: '/restaurant/view-restaurants',
+      name: 'restaurant',
+      meta: {
+        layout: 'default',
+      },
+      component: () =>
+        import(
+          '@/pages/restaurant'),
+    },
+    {
       path: '/auth/login',
       name: 'login',
       meta: {

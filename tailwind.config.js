@@ -18,6 +18,7 @@ module.exports = {
       black: '#000',
       white: '#fff',
       red: '#9D2213',
+      pagebg:'#fafeff',
       gray: {
         100: '#f8f8f8',
         200: '#edf2f7',

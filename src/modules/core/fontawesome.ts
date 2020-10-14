@@ -25,7 +25,7 @@ import {
     faBacon, faBreadSlice, faPizzaSlice,
      faIceCream, faUtensils,
      faHamburger, faCoffee, faBeer,
-     faCar, faThumbsUp, faQuoteLeft,
+     faCar, faThumbsUp, faQuoteLeft,faStar,faStarHalf
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
@@ -60,7 +60,7 @@ library.add(faCheck, faCheckCircle,
     faPizzaSlice, faIceCream,
     faUtensils, faHamburger,
     faCoffee, faBeer, faCar,
-     faThumbsUp, faQuoteLeft,
+     faThumbsUp, faQuoteLeft,faStar,faStarHalf
 
 );
 

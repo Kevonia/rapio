@@ -3,7 +3,7 @@ import AuthformTemplate from '@/components/authform-template';
 import env from '@/config/env';
 @Component({
   components: {
-    AuthformTemplate
+    AuthformTemplate,
   },
   name: 'forget',
 })

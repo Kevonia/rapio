@@ -31,7 +31,7 @@
         <hr class="border-gray-500 w-1/2 mx-auto" />
 
         <div class="grid justify-around">
-          <b-button type="is-primary" icon-left="globe">
+          <b-button type="is-primary" tag="router-link" to="/restaurant/view-restaurants" icon-left="globe" >
             Browse All Restaurants
           </b-button>
         </div>
