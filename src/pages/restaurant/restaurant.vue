@@ -17,7 +17,7 @@
       <div class="[ grid grid-cols-5 gap-4 ]">
         <div class="col-span-1">
           <div
-            class="[ bg-white ] [ self-center rounded shadow-xl ][ ][ grid grid-col-1 gap-6  p-8 ]"
+            class="[ bg-white ] [ self-center rounded shadow-xl ][ ][ grid grid-col-1 gap-6 p-8 ]"
           >
             <span class="text-center text-lg"> Filter </span>
             <span> Sort by </span>
@@ -70,6 +70,42 @@
                   >
                     24 Seven Cafe - The Jamaica Pegasus
                   </h3>
+
+                  <div
+                    class="grid col-span-1 border-t border-red w-10/12 mx-auto grid-cols-1"
+                  >
+                    <div class="pl-2 py-4 grid gcol-span-1">
+                      <h3
+                        class="font-medium text-gray-900 mb-4 leading-normal text-center"
+                      >
+                        100 Hope Road, Kingston 6
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div
+                    class="grid col-span-1 w-10/12 mx-auto grid-cols-1"
+                  >
+                    <div class="pl-2 py-4 grid grid-cols-5 col-span-1">
+                      <span v-for="index in 5" :key="index">
+                        <b-icon
+                          icon="star"
+                          size="is-small"
+                          type="is-primary"
+                          v-if="ratings - index > 0"
+                        >
+                        </b-icon>
+
+                        <b-icon
+                          icon="star-half"
+                          size="is-small"
+                          type="is-primary"
+                          v-if="ratings - index == -0.5"
+                        >
+                        </b-icon>
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

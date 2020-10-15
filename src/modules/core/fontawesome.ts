@@ -25,12 +25,12 @@ import {
     faBacon, faBreadSlice, faPizzaSlice,
     faIceCream, faUtensils,
     faHamburger, faCoffee, faBeer,
-    faCar, faThumbsUp, faQuoteLeft, faStar, faStarHalf
+    faCar, faThumbsUp, faQuoteLeft, faStar, faStarHalf,
 } from '@fortawesome/free-solid-svg-icons';
 
 
 import {
-    faFacebook, faTwitter, faInstagram
+    faFacebook, faTwitter, faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -67,7 +67,7 @@ library.add(faCheck, faCheckCircle,
     faUtensils, faHamburger,
     faCoffee, faBeer, faCar,
     faThumbsUp, faQuoteLeft,
-    faStar, faStarHalf, faFacebook, faTwitter, faInstagram
+    faStar, faStarHalf, faFacebook, faTwitter, faInstagram,
 
 );
 
