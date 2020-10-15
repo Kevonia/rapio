@@ -10,9 +10,9 @@ import {
     faEye, faEyeSlash, faCaretDown,
     faCaretUp, faUpload,
     faMapMarked, faLock, faPhone,
-     faUser, faEnvelope, faBars,
+    faUser, faEnvelope, faBars,
     faTimes, faTachometerAlt,
-     faFileInvoice, faUserFriends,
+    faFileInvoice, faUserFriends,
     faUserPlus, faCogs, faShippingFast,
     faWallet, faPlus,
     faSignOutAlt, faCog, faDesktop,
@@ -23,10 +23,16 @@ import {
     faSignInAlt, faAddressBook,
     faUserTimes, faSearch, faGlobe,
     faBacon, faBreadSlice, faPizzaSlice,
-     faIceCream, faUtensils,
-     faHamburger, faCoffee, faBeer,
-     faCar, faThumbsUp, faQuoteLeft,faStar,faStarHalf
+    faIceCream, faUtensils,
+    faHamburger, faCoffee, faBeer,
+    faCar, faThumbsUp, faQuoteLeft, faStar, faStarHalf
 } from '@fortawesome/free-solid-svg-icons';
+
+
+import {
+    faFacebook, faTwitter, faInstagram
+} from '@fortawesome/free-brands-svg-icons';
+
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -38,14 +44,14 @@ library.add(faCheck, faCheckCircle,
     faExclamationTriangle,
     faExclamationCircle,
     faArrowUp, faAngleRight,
-     faAngleLeft, faAngleDown,
+    faAngleLeft, faAngleDown,
     faEye, faEyeSlash,
     faCaretDown, faCaretUp,
     faUpload, faMapMarked,
     faLock, faPhone, faUser,
     faEnvelope, faBars,
     faTimes, faTachometerAlt,
-     faFileInvoice,
+    faFileInvoice,
     faUserFriends, faUserPlus,
     faCogs, faShippingFast,
     faWallet, faPlus,
@@ -60,7 +66,8 @@ library.add(faCheck, faCheckCircle,
     faPizzaSlice, faIceCream,
     faUtensils, faHamburger,
     faCoffee, faBeer, faCar,
-     faThumbsUp, faQuoteLeft,faStar,faStarHalf
+    faThumbsUp, faQuoteLeft,
+    faStar, faStarHalf, faFacebook, faTwitter, faInstagram
 
 );
 

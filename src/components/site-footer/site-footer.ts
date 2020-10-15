@@ -1,5 +1,9 @@
 import { Component, Vue } from 'vue-property-decorator';
 
+import env from '@/config/env';
+
+const { logo } = env.brand;
+
 @Component({
   components: {
   },
@@ -21,7 +25,9 @@ class SiteFooter extends Vue {
   // --------------------------------------------------------------------------
   // [Public] Accessors
   // --------------------------------------------------------------------------
-
+  get logo() {
+    return logo;
+  }
   // --------------------------------------------------------------------------
   // [Public] Methods
   // --------------------------------------------------------------------------

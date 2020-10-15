@@ -17,7 +17,7 @@
       <div class="[ grid grid-cols-5 gap-4 ]">
         <div class="col-span-1">
           <div
-            class="[ bg-white ] [ self-center rounded shadow-xl ][ ][ grid grid-col-1 gap-6 ]"
+            class="[ bg-white ] [ self-center rounded shadow-xl ][ ][ grid grid-col-1 gap-6  p-8 ]"
           >
             <span class="text-center text-lg"> Filter </span>
             <span> Sort by </span>
@@ -34,68 +34,42 @@
           <!-- Card -->
           <div class="grid grid-cols-3 gap-4">
             <div
-              class="[ bg-white ] [ self-center rounded shadow-xl ][ ][ grid grid-col-1 gap-6 ]"
+              class="[ bg-white ] [ self-center rounded shadow-xl ][ ][ grid grid-col-1 gap-6 transition duration-1000 ease-in-out transform hover:scale-105 hover:-translate-y-3 ]"
               v-for="index in 6"
               :key="index"
             >
-              <div class="grid gap-2">
-                <div class="p-4">
-                  <div class="w-full rounded overflow-hidden">
-                    <b-image
-                      src="https://www.foxcoders.com/demo/mezban/assets/images/popular-food/03.jpg"
-                      alt="Trending"
-                      ratio="6by4"
-                      class="transition duration-500 ease-in-out transform hover:scale-110"
-                    ></b-image>
+              <div
+                class="overflow-hidden bg-white rounded-lg shadow hover:shadow-raised hover:translateY-2px transition"
+              >
+                <div>
+                  <img
+                    class="w-full"
+                    src="https://source.unsplash.com/random/400x225"
+                    alt="Sunset in the mountains"
+                  />
+                  <div
+                    class="overlay absolute inset-0 w-full h-full opacity-0 hover:opacity-100 hover:bg-red hover:bg-opacity-75 items-center transition duration-1000 ease-in-out"
+                  >
+                    <div class="text">
+                      Welcome to the premier destination for entertainment in
+                      Kingston
+                    </div>
                   </div>
                 </div>
-                <div class="grid -mt-16">
-                  <b-image
+
+                <div class="grid -mt-10">
+                  <img
+                    class="mx-auto w-20"
                     src="https://content.7krave.com/restaurants/141/141_logo.png"
-                    alt="Trending"
-                    :rounded="true"
-                    class="mx-auto w-1/5"
-                  ></b-image>
+                    alt="Sunset in the mountains"
+                  />
                 </div>
-              </div>
-              <div class="font-semibold text-xl text-center">
-                100 One Hundred
-              </div>
-
-              <span class="text-base text-center">CUISINES:Jamaican </span>
-
-              <span class="text-base text-center"
-                >DESCRIPTION : Welcome to the premier destination for
-                entertainment in Kingston</span
-              >
-              <div
-                class="grid col-span-1 border-t border-red w-10/12 mx-auto grid-cols-3"
-              >
-                <div class="pl-2 py-4 grid grid-cols-5 col-span-1">
-                  <span v-for="index in 5" :key="index">
-                    <b-icon
-                      icon="star"
-                      size="is-small"
-                      type="is-primary"
-                      v-if="ratings - index > 0"
-                    >
-                    </b-icon>
-
-                    <b-icon
-                      icon="star-half"
-                      size="is-small"
-                      type="is-primary"
-                      v-if="ratings - index == -0.5"
-                    >
-                    </b-icon>
-                  </span>
-                </div>
-                <div
-                  class="border-l border-red mx-auto grid-cols-2 pl-2 py-4 col-span-2"
-                >
-                  <b-icon icon="home" size="is-small" type="is-primary">
-                  </b-icon>
-                  <span class="font-bold"> 100 Hope Road, Kingston 6 </span>
+                <div class="p-6 flex flex-col justify-between">
+                  <h3
+                    class="font-medium text-gray-900 mb-4 leading-normal text-center"
+                  >
+                    24 Seven Cafe - The Jamaica Pegasus
+                  </h3>
                 </div>
               </div>
             </div>
