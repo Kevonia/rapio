@@ -25,7 +25,7 @@ import {
     faBacon, faBreadSlice, faPizzaSlice,
     faIceCream, faUtensils,
     faHamburger, faCoffee, faBeer,
-    faCar, faThumbsUp, faQuoteLeft, faStar, faStarHalf,
+    faCar, faThumbsUp, faQuoteLeft, faStar, faStarHalf,faChevronRight,faChevronLeft
 } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -67,7 +67,8 @@ library.add(faCheck, faCheckCircle,
     faUtensils, faHamburger,
     faCoffee, faBeer, faCar,
     faThumbsUp, faQuoteLeft,
-    faStar, faStarHalf, faFacebook, faTwitter, faInstagram,
+    faStar, faStarHalf, faFacebook, 
+    faTwitter, faInstagram,faChevronRight,faChevronLeft
 
 );
 

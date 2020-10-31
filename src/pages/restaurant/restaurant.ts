@@ -1,3 +1,4 @@
+import { restaurant } from '@/store';
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
@@ -8,7 +9,6 @@ class Restaurant extends Vue {
   // --------------------------------------------------------------------------
   // [Private] Fields
   // --------------------------------------------------------------------------
-   private ratings = 4.5;
 
    private hover = false;
   // --------------------------------------------------------------------------
@@ -19,6 +19,12 @@ class Restaurant extends Vue {
     super();
   }
 
+
+  get restaurant(){
+    return  restaurant.Restaurant;
+  }
+
+  
   // --------------------------------------------------------------------------
   // [Public] Accessors
   // --------------------------------------------------------------------------
@@ -35,12 +41,21 @@ class Restaurant extends Vue {
   // [Private] Methods
   // --------------------------------------------------------------------------
 
+  private async created() {
+    // TODO: stuff to do when this component loads.
+
+    console.log( this.$route)
+    await restaurant.fetchRestaurant()
+
+
+  }
   // --------------------------------------------------------------------------
   // [Private] Lifecycle Hooks
   // --------------------------------------------------------------------------
 
-  private mounted() {
+  private async mounted() {
     // TODO: stuff to do when this component loads.
+   
 
   }
 }

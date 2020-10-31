@@ -11,13 +11,12 @@
   <div class="site-footer">
     <footer class="font-sans bg-black text-white py-8 px-4">
       <div
-        class="mx-auto container overflow-hidden flex flex-col lg:flex-row justify-between"
+        class="mx-auto  overflow-hidden flex flex-col md:flex-row justify-between"
       >
         <a href="/" class="block mr-4 w-40">
           <b-image
             :src="logo"
             alt="A random image"
-            :rounded="rounded"
           ></b-image>
         </a>
         <div class="w-1/2 flex text-sm mt-6 lg:mt-0">

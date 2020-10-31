@@ -15,7 +15,7 @@
                 placeholder="Email"
                 type="email"
                 icon="envelope"
-                v-model="username"
+                v-model="email"
               ></b-input>
             </b-field>
           </div>
@@ -42,7 +42,7 @@
           </div>
 
           <div>
-            <b-button type=" is-primary " class="w-full" native-type="submit"
+            <b-button type=" is-primary " class="w-full" native-type="submit" :loading="isLoading"
               >Login</b-button
             >
           </div>

@@ -1,10 +1,8 @@
-import { homeData } from '@/entities/homedata/homedata';
-
 import { AxiosResponse } from 'axios';
 import { BaseService } from './base';
 
-class HomeService extends BaseService {
-    // --------------------------------------------------------------------------
+class AuthService extends BaseService {
+  // --------------------------------------------------------------------------
   // [Private] Fields
   // --------------------------------------------------------------------------
 
@@ -22,10 +20,14 @@ class HomeService extends BaseService {
   // --------------------------------------------------------------------------
   // [Public] Methods
   // --------------------------------------------------------------------------
+  public async addUser(data: any): Promise<any> {
+    // define custom request options [NB: default config found in @/services/base]
+    return await (await this.api.post('/auth/add', data)).data;
+  }
 
-  public async getAll(): Promise<any> {
-
-    return await (await this.api.get('/')).data;
+  public async login(data: any): Promise<any> {
+    // define custom request options [NB: default config found in @/services/base]
+    return await (await this.api.post('/auth/login', data)).data;
   }
 
   // --------------------------------------------------------------------------
@@ -42,9 +44,9 @@ class HomeService extends BaseService {
 // Module Exports
 // ----------------------------------------------------------------------------
 
-const service  = new HomeService();
+const service  = new AuthService();
 
 export {
   service as default,
-  service as HomeService,
+  service as AuthService,
 };

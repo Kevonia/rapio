@@ -3,6 +3,7 @@ import AuthformTemplate from '@/components/authform-template';
 import env from '@/config/env';
 import { ValidationObserver, ValidationProvider } from 'vee-validate';
 import VueRecaptcha from 'vue-recaptcha';
+import { auth } from '@/store';
 
 
 @Component({
@@ -22,6 +23,7 @@ class Signup extends Vue {
   private email = '';
   private password = '';
   private confrimPassword = '';
+  private isLoading = false;
 
   // --------------------------------------------------------------------------
   // [Public] Constructor
@@ -59,9 +61,33 @@ class Signup extends Vue {
     (this.$refs.invisibleRecaptcha as unknown as VueRecaptcha).execute();
   }
 
-  private signup() {
+  private async signup() {
 
+
+    this.isLoading = true;
     const { confrimPassword, password, fullName, email } = this;
+
+    const user = {
+      confrimPassword, password, fullName, email,
+    };
+
+
+
+    const data = await auth.AddUser(user);
+
+    if (data.msg) {
+      this.$buefy.toast.open({
+        message: 'Account Created',
+        type: 'is-success',
+      });
+
+
+      this.isLoading = false;
+    } else {
+      this.isLoading = false;
+    }
+
+
 
   }
   // --------------------------------------------------------------------------

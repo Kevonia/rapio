@@ -15,7 +15,7 @@
 
     <section class="grid pt-10 px-10">
       <div class="[ grid grid-cols-5 gap-4 ]">
-        <div class="col-span-1">
+        <div class="col-span-1 sm:hidden md:block">
           <div
             class="[ bg-white ] [ self-center rounded shadow-xl ][ ][ grid grid-col-1 gap-6 p-8 ]"
           >
@@ -30,13 +30,13 @@
             </div>
           </div>
         </div>
-        <div class="col-span-4">
+        <div class="sm:col-span-5 md:col-span-4">
           <!-- Card -->
-          <div class="grid grid-cols-3 gap-4">
+          <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4 pb-10">
             <div
               class="[ bg-white ] [ self-center rounded shadow-xl ][ ][ grid grid-col-1 gap-6 transition duration-1000 ease-in-out transform hover:scale-105 hover:-translate-y-3 ]"
-              v-for="index in 6"
-              :key="index"
+              v-for="items in restaurant.data"
+              :key="items.id"
             >
               <div
                 class="overflow-hidden bg-white rounded-lg shadow hover:shadow-raised hover:translateY-2px transition"
@@ -44,15 +44,14 @@
                 <div>
                   <img
                     class="w-full"
-                    src="https://source.unsplash.com/random/400x225"
+                    :src="items.displayImg"
                     alt="Sunset in the mountains"
                   />
                   <div
                     class="overlay absolute inset-0 w-full h-full opacity-0 hover:opacity-100 hover:bg-red hover:bg-opacity-75 items-center transition duration-1000 ease-in-out"
                   >
                     <div class="text">
-                      Welcome to the premier destination for entertainment in
-                      Kingston
+                      {{ items.description }}
                     </div>
                   </div>
                 </div>
@@ -60,7 +59,7 @@
                 <div class="grid -mt-10">
                   <img
                     class="mx-auto w-20"
-                    src="https://content.7krave.com/restaurants/141/141_logo.png"
+                    :src="items.logo"
                     alt="Sunset in the mountains"
                   />
                 </div>
@@ -68,7 +67,7 @@
                   <h3
                     class="font-medium text-gray-900 mb-4 leading-normal text-center"
                   >
-                    24 Seven Cafe - The Jamaica Pegasus
+                    {{ items.name }}
                   </h3>
 
                   <div
@@ -78,21 +77,19 @@
                       <h3
                         class="font-medium text-gray-900 mb-4 leading-normal text-center"
                       >
-                        100 Hope Road, Kingston 6
+                        {{ items.address }}
                       </h3>
                     </div>
                   </div>
 
-                  <div
-                    class="grid col-span-1 w-10/12 mx-auto grid-cols-1"
-                  >
+                  <div class="grid col-span-1 w-10/12 mx-auto grid-cols-1">
                     <div class="pl-2 py-4 grid grid-cols-5 col-span-1">
                       <span v-for="index in 5" :key="index">
                         <b-icon
                           icon="star"
                           size="is-small"
                           type="is-primary"
-                          v-if="ratings - index > 0"
+                          v-if="items.rating - index > 0"
                         >
                         </b-icon>
 
@@ -100,7 +97,7 @@
                           icon="star-half"
                           size="is-small"
                           type="is-primary"
-                          v-if="ratings - index == -0.5"
+                          v-if="items.rating - index == -0.5"
                         >
                         </b-icon>
                       </span>
@@ -110,6 +107,45 @@
               </div>
             </div>
           </div>
+          <b-pagination
+            class="w-full"
+            :total="restaurant.total"
+            :per-page="restaurant.per_page"
+            :current="restaurant.current_page"
+            order="is-centered"
+            tag="button"
+            @click="GotoPage(1)"
+          >
+            <b-pagination-button
+              slot-scope="props"
+              :page="props.page"
+              :id="`page${props.page.number}`"
+              tag="router-link"
+              :to="`?page${props.page.number}`"
+            >
+              {{ props.page.number }}
+            </b-pagination-button>
+
+            <b-pagination-button
+              slot="previous"
+              slot-scope="props"
+              :page="props.page"
+              tag="router-link"
+              :to="`?page${props.page.number}`"
+            >
+              <b-icon icon="chevron-left" size="is-small"> </b-icon>
+            </b-pagination-button>
+
+            <b-pagination-button
+              slot="next"
+              slot-scope="props"
+              :page="props.page"
+              tag="router-link"
+              :to="`?page${props.page.number}`"
+            >
+              <b-icon icon="chevron-right" size="is-small"> </b-icon>
+            </b-pagination-button>
+          </b-pagination>
         </div>
       </div>
     </section>

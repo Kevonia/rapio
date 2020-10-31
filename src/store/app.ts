@@ -32,7 +32,9 @@ class AppStore {
 
   @Action({ commit: 'setHomePage' })
   public async initializeHomePage() {
+
     const result =  await HomeService.getAll();
+
     return  result;
   }
 

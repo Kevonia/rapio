@@ -3,7 +3,10 @@
 <template>
   <div class="signup [ grid h-screen ]">
     <authform-template>
-      <form class="[ grid gap-4 ] [  animate__animated animate__fadeInUp  ]" v-on:submit.prevent="signup">
+      <form
+        class="[ grid gap-4 ] [ animate__animated animate__fadeInUp ]"
+        v-on:submit.prevent="signup"
+      >
         <div class="[ text-center ]">
           <h2 class="[ text-4xl font-medium ]">Sign up, it's easy and free!</h2>
           <p class="[ text-xl ]">
@@ -15,9 +18,9 @@
           <b-field label="Full Name" label-position="on-border">
             <b-input
               placeholder="Full Name"
-              type="email"
+              type="text"
               icon="user"
-            
+              v-model="fullName"
             ></b-input>
           </b-field>
         </div>
@@ -28,7 +31,7 @@
               placeholder="Email"
               type="email"
               icon="envelope"
-            
+              v-model="email"
             ></b-input>
           </b-field>
         </div>
@@ -39,7 +42,7 @@
               placeholder="Password"
               type="password"
               icon="lock"
-            
+              v-model="password"
               password-reveal
             ></b-input>
           </b-field>
@@ -51,15 +54,14 @@
               placeholder="confrimPassword"
               type="password"
               icon="lock"
-            
+              v-model="confrimPassword"
               password-reveal
             ></b-input>
           </b-field>
         </div>
 
-    
         <div>
-          <b-button type=" is-primary " class="w-full" native-type="submit"
+          <b-button type=" is-primary " class="w-full" native-type="submit" :loading="isLoading"
             >Register</b-button
           >
         </div>
@@ -71,13 +73,13 @@
             <router-link to="/auth/login" class="text-red">Login</router-link>
           </p>
         </div>
-            <vue-recaptcha
-                  ref="invisibleRecaptcha"
-                  size="invisible"
-                  @verify="onCaptchaVerified"
-                  @expired="onCaptchaExpired"
-                  :sitekey="siteKey"
-                ></vue-recaptcha>
+        <vue-recaptcha
+          ref="invisibleRecaptcha"
+          size="invisible"
+          @verify="onCaptchaVerified"
+          @expired="onCaptchaExpired"
+          :sitekey="siteKey"
+        ></vue-recaptcha>
       </form>
     </authform-template>
   </div>
