@@ -1,6 +1,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 import env from '@/config/env';
+import { HomeService } from '@/services/home-service';
 
 const { logo } = env.brand;
 
@@ -17,6 +18,7 @@ class SiteFooter extends Vue {
   // --------------------------------------------------------------------------
   // [Public] Constructor
   // --------------------------------------------------------------------------
+  public email: string = '';
 
   constructor() {
     super();
@@ -31,7 +33,22 @@ class SiteFooter extends Vue {
   // --------------------------------------------------------------------------
   // [Public] Methods
   // --------------------------------------------------------------------------
+  public async Subscribe() {
 
+    const email = {
+      email: this.email
+    };
+    const mail = await HomeService.getMailChip(email);
+
+    if (mail) {
+      this.$buefy.toast.open({
+        message: 'Thank you for Subscribing To Our Mailing List',
+        type: 'is-success'
+      })
+    }
+
+
+  }
   // --------------------------------------------------------------------------
   // [Private] Event Handlers
   // --------------------------------------------------------------------------

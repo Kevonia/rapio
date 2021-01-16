@@ -13,12 +13,18 @@ class AppStore {
 
   private _homeData!: homeData;
 
+  private _chartitems: number = 0;
+
   // ------------------------------------------------------------------------
   // Getters retrieve properties from the Store.
   // ------------------------------------------------------------------------
 
   public get homeData() {
     return this._homeData;
+  }
+
+  public get chatList() {
+    return this._chartitems;
   }
 
   // ------------------------------------------------------------------------
@@ -38,6 +44,13 @@ class AppStore {
     return  result;
   }
 
+  @Action({ commit: 'setChartitems' })
+  public async UpdateCart() {
+
+    const result = this._chartitems + 1;
+
+    return  result;
+  }
   // ------------------------------------------------------------------------
   // Mutations update the properties in the Store.
   // They are internal
@@ -45,6 +58,11 @@ class AppStore {
   @Mutation
   private setHomePage(value: homeData) {
     this._homeData = value;
+  }
+
+  @Mutation
+  private setChartitems(value: number) {
+    this._chartitems = value;
   }
 }
 

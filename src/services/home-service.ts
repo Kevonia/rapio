@@ -28,6 +28,12 @@ class HomeService extends BaseService {
     return await (await this.api.get('/')).data;
   }
 
+
+  public async getMailChip(email:any): Promise<any> {
+
+    return await (await this.api.post('add/mailchimp/',email)).data;
+  }
+
   // --------------------------------------------------------------------------
   // [Private] Event Handlers
   // --------------------------------------------------------------------------

@@ -45,7 +45,7 @@
             </div>
 
             <div class="grid gap">
-              <img :src="Icon2"  class="mx-auto sm:w-full md:w-1/3"" />
+              <img :src="Icon2"  class="mx-auto sm:w-full md:w-1/3" />
               <h3 class="text-center font-semibold text-lg">
                 Order a takeaway
               </h3>
@@ -126,14 +126,14 @@
                     <div
                       class="overlay absolute inset-0 w-full h-full opacity-0 hover:opacity-100 hover:bg-red hover:bg-opacity-75 items-center transition duration-1000 ease-in-out"
                     >
-                      <div class="text">
+                      <div class="text  ">
                         {{ collection.description }}
                       </div>
                     </div>
                   </div>
 
                   <div class="card-content">
-                    <div class="content text-center">{{ collection.name }}</div>
+                    <div class="content text-center font-bold ">{{ collection.name }}</div>
                   </div>
                 </div>
               </div>

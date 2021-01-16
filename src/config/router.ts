@@ -48,14 +48,54 @@ export default new Router({
           '@/pages/signup'),
     },
     {
+      path: '/restaurant/view-restaurant/:id',
+      name: 'restaurant',
+      meta: {
+        layout: 'default',
+      },
+      component: () =>
+        import(
+          '@/pages/meuns'),
+    },
+    {
+      path: '*',
+      name: 'notfound',
+      meta: {
+        layout: 'minimal',
+      },
+      component: () =>
+        import(
+          '@/pages/notfound'),
+    },
+    {
       path: '/auth/forget',
       name: 'forget',
       meta: {
-      layout: 'minimal',
+        layout: 'minimal',
       },
       component: () =>
         import(
           '@/pages/forget'),
+    },
+    {
+      path: '/contactus',
+      name: 'contactus',
+      meta: {
+        layout: 'default',
+      },
+      component: () =>
+        import(
+          '@/pages/contact'),
+    },
+    {
+      path: '/checkout',
+      name: 'checkout',
+      meta: {
+        layout: 'default',
+      },
+      component: () =>
+        import(
+          '@/pages/checkout'),
     },
   ],
 });

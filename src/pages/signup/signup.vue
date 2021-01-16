@@ -61,7 +61,11 @@
         </div>
 
         <div>
-          <b-button type=" is-primary " class="w-full" native-type="submit" :loading="isLoading"
+          <b-button
+            type=" is-primary "
+            class="w-full"
+            native-type="submit"
+            :loading="isLoading"
             >Register</b-button
           >
         </div>
@@ -71,6 +75,12 @@
             Already a memebr
 
             <router-link to="/auth/login" class="text-red">Login</router-link>
+          </p>
+        </div>
+
+        <div class="[ text-center ]">
+          <p>
+            <router-link to="/" class="text-red"> Back to Home </router-link>
           </p>
         </div>
         <vue-recaptcha

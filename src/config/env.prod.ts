@@ -1,3 +1,3 @@
 export default {
-  apiUrl: 'http://rapioeats.test/api/v1',
+  apiUrl: 'https://www.rapidofleets.com/app/public/api/v1',
 };

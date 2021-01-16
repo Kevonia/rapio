@@ -21,6 +21,16 @@ class RestaurantsService extends BaseService {
   // --------------------------------------------------------------------------
   // [Public] Methods
   // --------------------------------------------------------------------------
+  public async getFilter(id: string): Promise<any[]> {
+
+    return await (await this.api.get('/restaurant/filter/' + id)).data[0].restaurant;
+  }
+
+  public async getMenuById(id: string): Promise<any[]> {
+
+    return await (await this.api.get('/restaurant/menu/' + id)).data[0].restaurantmenu;
+  }
+
   public async getAll(): Promise<any[]> {
 
     return await (await this.api.get('/restaurant')).data[0].restaurant;
@@ -29,8 +39,19 @@ class RestaurantsService extends BaseService {
 
   public async getPage(path: string): Promise<any[]> {
 
-    return await (await this.api.get('/restaurant'+path)).data[0].restaurant;
+    return await (await this.api.get('/restaurant?' + path)).data[0].restaurant;
   }
+
+  public async sortBy(data: any): Promise<any[]> {
+
+    return await (await this.api.post('/restaurant/sort', data)).data[0].restaurant;
+  }
+
+  public async getCuisine(): Promise<any[]> {
+
+    return await (await this.api.get('/cuisine')).data.cuisine;
+  }
+
 
 
   // --------------------------------------------------------------------------

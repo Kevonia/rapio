@@ -2,7 +2,7 @@ import { createStoreWrapper } from '@/modules/core/store-wrapper';
 import Vue from 'vue';
 import Vuex, { ModuleTree } from 'vuex';
 import { AppStore } from './app';
-import { RestaurantsStore } from './restaurants-store/restaurants-store'
+import { RestaurantsStore } from './restaurants-store/restaurants-store';
 import { AuthStore } from './authstore/authstore';
 import createPersistedState from 'vuex-persistedstate';
 

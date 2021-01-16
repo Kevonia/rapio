@@ -13,6 +13,10 @@ class AuthStore {
     // Getters retrieve properties from the Store.
     // ------------------------------------------------------------------------
 
+    public get logined() {
+        return this._logined;
+    }
+
     public get registered() {
         return this._registered;
     }

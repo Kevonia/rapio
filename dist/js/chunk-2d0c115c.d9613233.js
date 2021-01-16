@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0c115c"],{4516:function(n,c,i){"use strict";describe("Minimal.vue",(function(){it("mounts",(function(){return!0}))}))}}]);
+//# sourceMappingURL=chunk-2d0c115c.d9613233.js.map

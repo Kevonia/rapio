@@ -49,12 +49,12 @@ class Login extends Vue {
       const { password, email } = this;
       const data = {
         password,
-        email
+        email,
       };
       await auth.login(data);
       this.isLoading = false;
-      
-        this.navigate('/')
+
+      this.navigate('/');
     } catch (error) {
 
       this.isLoading = false;
@@ -62,8 +62,8 @@ class Login extends Vue {
         duration: 5000,
         message: `Invaild username or password`,
         position: 'is-top',
-        type: 'is-danger'
-      })
+        type: 'is-danger',
+      });
     }
 
   }

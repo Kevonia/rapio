@@ -1,5 +1,6 @@
 import { restaurant } from '@/store';
 import { Component, Vue } from 'vue-property-decorator';
+import { Dictionary } from 'vue-router/types/router';
 
 @Component({
   components: {},
@@ -10,7 +11,8 @@ class Restaurant extends Vue {
   // [Private] Fields
   // --------------------------------------------------------------------------
 
-   private hover = false;
+  private hover = false;
+  private isloading = true;
   // --------------------------------------------------------------------------
   // [Public] Constructor
   // --------------------------------------------------------------------------
@@ -20,11 +22,16 @@ class Restaurant extends Vue {
   }
 
 
-  get restaurant(){
-    return  restaurant.Restaurant;
+  get restaurant() {
+    return restaurant.Restaurant;
   }
 
-  
+
+  get cuisines() {
+    return restaurant.Cuisines;
+  }
+
+
   // --------------------------------------------------------------------------
   // [Public] Accessors
   // --------------------------------------------------------------------------
@@ -41,11 +48,49 @@ class Restaurant extends Vue {
   // [Private] Methods
   // --------------------------------------------------------------------------
 
+  public async navigate(path: string, params?: Dictionary<string>) {
+    await this.$router.push({ path, params });
+  }
+
+
+
   private async created() {
     // TODO: stuff to do when this component loads.
 
-    console.log( this.$route)
-    await restaurant.fetchRestaurant()
+    await restaurant.fetchsetCuisines();
+    const filter = this.$route.query.filter;
+    if (filter) {
+
+      await restaurant.getFilter(filter?.toString());
+
+      this.isloading = false;
+
+    } else {
+      if (!this.$route.query.order) {
+        const page = this.$route.fullPath.split('?')[1];
+
+        if (page != undefined) {
+          await restaurant.fetchRestaurantPage(page);
+          this.isloading = false;
+        } else {
+          await restaurant.fetchRestaurant();
+          this.isloading = false;
+        }
+      } else if (this.$route.query.order) {
+
+        const data = {
+          order: this.$route.query.order,
+          sort: this.$route.query.sort,
+        };
+
+        await restaurant.fetchSortBy(data);
+        this.isloading = false;
+
+      }
+    }
+
+
+
 
 
   }
@@ -55,7 +100,7 @@ class Restaurant extends Vue {
 
   private async mounted() {
     // TODO: stuff to do when this component loads.
-   
+
 
   }
 }

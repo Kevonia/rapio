@@ -6,8 +6,11 @@
       <div
         class="lg:col-span-2 md:col-span-1 md:block sm:hidden bg-fixed"
         style="
-          background-image: url(../assets/img/background-home.jpg);
-          background-position: center;
+          background-image: url(../assets/img/collection2.jpeg);
+          background-position: center right;
+          background-repeat: no-repeat;
+         background-size: cover;
+         
         "
       >
         <div class="[ h-full ][ grid ] [ food-cover ]">

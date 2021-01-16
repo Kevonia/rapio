@@ -18,13 +18,22 @@
         <b-icon icon="sign-in-alt" size="is-small" type="is-primary"> </b-icon>
         <span class="pl-2"> Login </span>
       </b-navbar-item>
-      <b-navbar-item tag="router-link" to="/auth/register"  class="[ flex ]">
+      <b-navbar-item tag="router-link" to="/auth/register" class="[ flex ]">
         <b-icon icon="user-times" size="is-small" type="is-primary"> </b-icon>
+
         <span class="pl-2">Sign Up </span>
       </b-navbar-item>
-      <b-navbar-item tag="router-link" to="/"  class="[ flex ]">
+      <b-navbar-item tag="router-link" to="/contactus" class="[ flex ]">
         <b-icon icon="address-book" size="is-small" type="is-primary"> </b-icon>
         <span class="pl-2"> Contact </span>
+      </b-navbar-item>
+
+
+      <b-navbar-item tag="router-link" to="/checkout" class="[ flex]" v-if="user!=undefined">
+        <b-icon icon="shopping-cart" size="is-small" type="is-primary">
+        </b-icon>
+        <span title="Badge top left" class="badge is-left">{{count}}</span>
+        <span class="pl-2"> Cart </span>
       </b-navbar-item>
     </template>
   </b-navbar>

@@ -1,5 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator';
 import env from '@/config/env';
+import { app, auth } from '@/store';
 
 const { logo } = env.brand;
 @Component({
@@ -27,6 +28,17 @@ class Navbar extends Vue {
   get logo() {
     return logo;
   }
+
+
+  get count() {
+    return app.chatList;
+  }
+
+  
+  get user() {
+    return auth?.logined?.access_token;
+  }
+
   // --------------------------------------------------------------------------
   // [Public] Methods
   // --------------------------------------------------------------------------
@@ -45,7 +57,7 @@ class Navbar extends Vue {
 
   private mounted() {
     // TODO: stuff to do when this component loads.
-
+    
   }
 }
 
